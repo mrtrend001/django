@@ -10,5 +10,5 @@ def kk(request):
 
 def view_book(request):
     book = models.Book.objects.all()
-    return render(request, 'book.html', {'book: book'})
+    return render(request, 'book.html', {'book': book})
 
