@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book</title>
+</head>
+<body>
+
+{% for i in  book %}
+
+{{ i.title }}<br>
+<img src="{{i.image.url}}" alt="" width="350" height="300"><br>
+{{i.description}}<br>
+{{i.type_book}}<br>
+{{i.genre}}<br>
+{{i.created_ad}}
+<hr>
+
+{% endfor %}
+
+</body>
+</html>
