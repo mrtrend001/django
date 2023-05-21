@@ -12,3 +12,7 @@ def view_book(request):
     book = models.Book.objects.all()
     return render(request, 'book.html', {'book': book})
 
+
+def person_id(request):
+    persons = models.Book.objects.all()
+    return render()
