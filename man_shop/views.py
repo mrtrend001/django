@@ -26,3 +26,23 @@ def create_cloth_view(request):
     return render(request, 'crud/create_cloth.html', {"form": form})
             
 
+def delete_cloth_view(request, id):
+    cloth_id = get_object_or_404(models.Surv, id=id)
+    cloth_id.delete()
+    return HttpResponse('анкета удалена')
+
+
+def update_cloth_view(request, id):
+    cloth_id = get_object_or_404(models.Surv, id=id)
+    if request.method == "POST":
+        form = forms.ManShopForms(instance=cloth_id, data=request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponse('Данные обновлены')
+    else:
+        form = forms.ManShopForms(instance=cloth_id)
+    context = {
+        "form": form,
+        "cloth_id": cloth_id
+    }
+    return render(request, "crud/update_cloth.html", context)

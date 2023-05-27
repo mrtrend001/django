@@ -9,6 +9,14 @@
   <img src="cloth_id.image.url" alt="">
     <h1>{{cloth_id.manufacturer}}</h1>
     <h1>{{cloth_id.compound}}</h1>
+    <button><a href="/cloth_detail/{{cloth_id.id}}/delete/">Удалить</a></button>
+    <button><a href="/cloth_detail/{{cloth_id.id}}/update/">Редактировать</a></button>
+
+  {% for i in cloth_id.comment_object.all %}
+  <h1>{{i.description}}</h1>
+  <p>{{i.created_at}}</p>
+    <br><br><br>
+  {% endfor %}
 </center>
 
 </body>

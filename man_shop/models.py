@@ -24,4 +24,11 @@ class Surv(models.Model):
         return self.name
 
 
+class Reviews(models.Model):
+    name_reviews = models.ForeignKey(Surv, on_delete=models.CASCADE,
+                                     related_name='comment_object')
+    description = models.TextField('your reviews')
+    create_ad = models.DateTimeField(auto_now_add=True)
 
+    def __str__(self):
+        return self.description

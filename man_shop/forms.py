@@ -4,7 +4,7 @@ from . import models
 
 class ManShopForms(forms.ModelForm):
     class Meta:
-        models = models.Surv
+        model = models.Surv
         fields = "__all__"
         #fields = "title description image"
 
