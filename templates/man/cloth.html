@@ -1,19 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Cloth</title>
-</head>
-<body>
-<center>
+{% include 'man/header.html' %}
     <h1>Одежда</h1>
     {% for i in cloth %}
     <img src="{{i.image.url}}">
-    <р>{{i.manufacturer}}</р>
-    <p>{{i.compound}}</p>
+     <h1> производитель </h1> <br>
+    <р>{{i.manufacturer}}</р> <br>
+     <h1> состав </h1> <br>
+    <p>{{i.compound}}</p> <br>
     <button><a href='/cloth_detail/{{i.id}}'>Подробнее</a></button>
     <button><a href='/add-cloth'>добавить анкету</a></button>
     {% endfor %}
-</center>
-</body>
-</html>
+
+{% include 'man/footer.html' %}

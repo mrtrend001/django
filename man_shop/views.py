@@ -10,6 +10,7 @@ def cloth_view(request):
 
 
 def cloth_detail_view(request, id):
+    cloth_view
     cloth_id = get_object_or_404(models.Surv, id=id)
     return render(request, 'man/cloth_detail.html', {'cloth_id': cloth_id})
 
