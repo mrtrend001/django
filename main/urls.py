@@ -8,7 +8,7 @@ from man_shop.views import cloth_detail_view
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('man_shop.urls')),
-    path('parser', include('parser_app.urls')),
+    path('', include('parser_app.urls')),
     path('book', include('book.urls')),
     path('cloth/<int:cloth_id>/', cloth_detail_view, name='cloth_detail'),
 ]+static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)\
