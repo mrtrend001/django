@@ -8,6 +8,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('book', include('book.urls')),
     path('', include('man_shop.urls')),
-    path('cloth/<int:cloth_id>/', cloth_detail_view, name='cloth_detail')
+    path('cloth/<int:cloth_id>/', cloth_detail_view, name='cloth_detail'),
+    path('', include('parser_app.urls')),
 ]+static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)\
               +static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
